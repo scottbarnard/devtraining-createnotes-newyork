@@ -26,7 +26,7 @@
 		}).then(function(r) {
 			// When the promise is returned, broadcast the change
 			if (updateType == 'title' || updateType == 'body') { 
-				$rootScope.$broadcast('updateTitle', r.data.title, r.data.note); 
+				$rootScope.$emit('updateTitle', r.data.title, r.data.note); 
 			}
 		});
 	}
@@ -36,7 +36,7 @@
 			action: 'deleteNote',
 			noteID: c.data.noteID
 		}).then(function(r) {
-			$rootScope.$broadcast('deleteNote', c.data.noteID);
+			$rootScope.$emit('deleteNote', c.data.noteID);
 			c.data.title = '';
 			c.data.note = '';
 			c.data.noteID = '';
@@ -96,14 +96,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-10-14 01:17:32</sys_created_on>
         <sys_id>d06529694f7d4f004e584b8d0210c7b7</sys_id>
-        <sys_mod_count>28</sys_mod_count>
+        <sys_mod_count>29</sys_mod_count>
         <sys_name>Notes Body</sys_name>
         <sys_package display_value="CreateNotes" source="x_snc_createnotes">df5fd9a5090232007f44e1046c8ff69f</sys_package>
         <sys_policy/>
         <sys_scope display_value="CreateNotes">df5fd9a5090232007f44e1046c8ff69f</sys_scope>
         <sys_update_name>sp_widget_d06529694f7d4f004e584b8d0210c7b7</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-10-17 22:48:51</sys_updated_on>
+        <sys_updated_on>2017-11-01 22:57:17</sys_updated_on>
         <template><![CDATA[<div class="panel panel-default" ng-show="c.data.noteID">
   <div class="panel-heading clearfix">
     <div class="row">
