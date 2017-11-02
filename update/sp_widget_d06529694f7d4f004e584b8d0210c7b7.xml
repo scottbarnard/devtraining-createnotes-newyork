@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
-        <client_script><![CDATA[function($scope,$rootScope,$timeout) {
+        <client_script><![CDATA[function($scope,$rootScope) {
 	/* widget controller */
 	var c = this;
 
@@ -13,7 +13,6 @@
 			c.data.title = r.data.title;
 			c.data.note = r.data.note;
 			c.data.noteID = r.data.noteID;
-			$timeout();
 		});
 	});
 
@@ -24,7 +23,7 @@
 			noteBody: c.data.note,
 			noteTitle: c.data.title
 		}).then(function(r) {
-			// When the promise is returned, broadcast the change
+			// When the promise is returned, emit the change
 			if (updateType == 'title' || updateType == 'body') { 
 				$rootScope.$emit('updateTitle', r.data.title, r.data.note); 
 			}
@@ -96,14 +95,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-10-14 01:17:32</sys_created_on>
         <sys_id>d06529694f7d4f004e584b8d0210c7b7</sys_id>
-        <sys_mod_count>29</sys_mod_count>
+        <sys_mod_count>30</sys_mod_count>
         <sys_name>Notes Body</sys_name>
         <sys_package display_value="CreateNotes" source="x_snc_createnotes">df5fd9a5090232007f44e1046c8ff69f</sys_package>
         <sys_policy/>
         <sys_scope display_value="CreateNotes">df5fd9a5090232007f44e1046c8ff69f</sys_scope>
         <sys_update_name>sp_widget_d06529694f7d4f004e584b8d0210c7b7</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-11-01 22:57:17</sys_updated_on>
+        <sys_updated_on>2017-11-02 03:44:15</sys_updated_on>
         <template><![CDATA[<div class="panel panel-default" ng-show="c.data.noteID">
   <div class="panel-heading clearfix">
     <div class="row">
